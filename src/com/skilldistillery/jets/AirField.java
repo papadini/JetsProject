@@ -1,11 +1,15 @@
 package com.skilldistillery.jets;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class AirField {
 	private Jet[] jets;
 	private final int MAX_JETS = 20;
 	private int numJet = 5;
+	
+	CargoCarrier cc = new CargoCarrier();
+	FighterJet fj = new FighterJet();
 	
 	
 	
@@ -50,6 +54,96 @@ public class AirField {
 			}
 		}
 	}
+
+	public void findFastest() {
+		double largest = jets[0].getSpeed();
+		String fastest = jets[0].getModel();
+		for (int i = 0; i < jets.length; i++) {
+			if (jets[i] != null) {
+				if (jets[i].getSpeed() > largest) {
+					largest = jets[i].getSpeed();
+					fastest = jets[i].getModel();
+				}
+
+			}
+		}
+
+		System.out.println("The fastest Jet we have is " + fastest +
+				". It can go " + largest + "mph!");
+
+	}
+	
+	public  void longestRange () {
+		double longest = jets[0].getRange();
+		String longestRange = jets[0].getModel();
+		for (int i = 0; i < jets.length; i++) {
+			if (jets[i] != null) {
+				if (jets[i].getRange() > longest) {
+					longest = jets[i].getRange();
+					longestRange = jets[i].getModel();
+				}
+
+			}
+		}
+		
+		System.out.println("The Jet with the longest range is " + longestRange 
+				+ " and it can go " + longest + " miles!" );
+		
+}
+	public void callCargo () {
+		for (Jet jet : jets) {
+			if ( jet != null ) {
+				if ( jet instanceof  CargoCarrier ) {
+					System.out.println( jet.getModel() );
+					 cc.loadCargo();
+				}
+			}
+		}
+	}
+	
+	public void dogFight () {
+		for (Jet jet : jets) {
+			if ( jet != null ) {
+				if ( jet instanceof FighterJet ) {
+					System.out.println( jet.getModel() );
+					fj.fight();
+				}
+			}
+		}
+	}
+	
+	public void addJet () {
+		Scanner kb = new Scanner(System.in);
+		System.out.print("Enter jet model: ");
+		String jName = kb.next();
+		System.out.print("Enter your jets speed: ");
+		double speed = kb.nextDouble();
+		System.out.print("Enter your jets range: ");
+		double range = kb.nextDouble();
+		System.out.print("Enter your jets range: ");
+		double price = kb.nextDouble();
+		
+		for ( int i = 6; i < jets.length ; i ++) {
+			if ( jets[i] == null ) {
+				jets[i] = new JetImpl( jName, speed, range, price );
+				break;
+			}
+		}
+			
+		kb.close();
+		
+		
+		
+	}
+	public void displayMach () {
+		for (Jet jet : jets) {
+			if ( jet != null ) {
+				jet.machSpeed( jet.getSpeed() );
+			}
+		}
+	}
+	
+	
 	
 	
 	

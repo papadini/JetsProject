@@ -10,13 +10,10 @@ public class FighterJet extends Jet implements CombatReady, Stealth{
 		super(model, speed, range, price);
 		this.weapon = weapon;
 	}
-	
-	public void topGun () {
-		System.out.println("Only Mavrick can handle these boys!");
-		System.out.println("Its packing a set of " + weapon);
-	}
+	@Override
 	public void fight () {
-		System.out.println("target locked, fire the " + weapon);
+		System.out.println("Only Mavrick can handle these boys!");
+		System.out.println("target is locked, FIRE!!!");
 	}
 	public void stealthMode() {
 		System.out.println("shhhh, stealh mode activated");
@@ -32,7 +29,7 @@ public class FighterJet extends Jet implements CombatReady, Stealth{
 
 	@Override
 	public String toString() {
-		return  "weapon: " + weapon + " " + super.toString();
+		return  "Fighter Jet-weapon: " + weapon + " " + super.toString();
 	}
 
 	@Override

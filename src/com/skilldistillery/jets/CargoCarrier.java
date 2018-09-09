@@ -12,6 +12,7 @@ public class CargoCarrier extends Jet implements Cargo {
 		
 	}@Override
 	public void loadCargo() {
+		
 		System.out.println("Load em up");
 	}
 
@@ -25,7 +26,7 @@ public class CargoCarrier extends Jet implements Cargo {
 
 	@Override
 	public String toString() {
-		return "CargoCarrier [size=" + size + ", toString()=" + super.toString() + "]";
+		return "CargoCarrier-size=" + size + " " + super.toString() ;
 	}
 
 	@Override

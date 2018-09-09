@@ -1,10 +1,15 @@
 package com.skilldistillery.jets;
 
+import java.text.DecimalFormat;
+
 public abstract class Jet {
 private String model;
 private double speed; // in mph
 private double range;
 private double price;
+
+DecimalFormat df = new DecimalFormat("0.00");
+
 
 public Jet () {}
 
@@ -19,21 +24,21 @@ public Jet (String model, double speed, double range, double price ) {
 public void fly () {
 	System.out.println("SHHOOOOOOOOOSHHHHHHHH!!!!!!!!!!!");
 	double time = range / speed;
-	System.out.println("Jet : " + model + " Speed: " + speed + " Range: " + range + " Price: " + price + " Time: " + time);
+	System.out.println("Jet : " + model + " Speed: " + speed + " Range: " + range + " Price: " + price + " Time: " + df.format(time) + " hours");
 }
-public String getMachSpeed (double speed ) {
+public void machSpeed (double speed ) {
 	double mach = speed / 760.5583392985;
 	if (mach < 1.0 ) {
-		return "Subsonic";
+		System.out.println(" This jet is Subsonic");
 	}
 	else if ( mach == 1.0 ) {
-		return "Transonic";
+		System.out.println(" This jet is Transonic");
 	}
 	else if (mach > 1.0 ) {
-		return "Supersonic";
+		System.out.println("This jet is Supersonic");
 	}
 	else {
-		return "Hypersonic";
+		System.out.println("This jet is Hypersonic");
 	}
 }
 public String getModel() {
@@ -119,8 +124,8 @@ public boolean equals(Object obj) {
 
 @Override
 public String toString() {
-	return "Jet [model=" + model + ", speed=" + speed + ", range=" + range  + ", price=" + price
-			+ "]";
+	return "model=" + model + ", speed=" + speed + ", range=" + range  + ", price=" + price + " million" ;
+			
 }
 
 
