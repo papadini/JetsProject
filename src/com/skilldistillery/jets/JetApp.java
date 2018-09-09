@@ -88,14 +88,14 @@ public class JetApp {
 				choice = kb.nextInt();
 			break;
 		case 7 : choice = field.addJet();
-				//System.out.println("Make another selection");
 				break;
 			
 		case 8 : field.displayMach();
 				System.out.println("Make another selection");
 				choice = kb.nextInt();
 			break;
-		case 9 : break;
+		case 9 : System.out.println("Thanks for visiting the Air Field");
+			break;
 		default: System.out.println("Enter 1-9 please");
 		
 		
