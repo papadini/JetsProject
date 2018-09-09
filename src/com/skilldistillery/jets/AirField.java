@@ -114,15 +114,16 @@ public class AirField {
 	
 	public int addJet () {
 		Scanner kb = new Scanner(System.in);
-		System.out.println("Enter jet model: ");
+		System.out.println("Enter jet model(no spaces): ");
 		String jName = kb.next();
-		System.out.println("Enter your jets speed: ");
+		System.out.println("Enter your jets speed(in mph): ");
 		double speed = kb.nextDouble();
-		System.out.println("Enter your jets range: ");
+		System.out.println("Enter your jets range(in miles): ");
 		double range = kb.nextDouble();
-		System.out.println("Enter your jets price: ");
+		System.out.println("Enter your jets price(in millions): ");
 		double price = kb.nextDouble();
 		price = price * 000001;
+		menu();
 		System.out.println("Make another selection");
 		int input = kb.nextInt();
 		
@@ -148,6 +149,18 @@ public class AirField {
 				jet.machSpeed( jet.getSpeed() );
 			}
 		}
+	}
+	
+	public void menu() {
+		System.out.println("1: List Fleet");
+		System.out.println("2: Fly all Jets");
+		System.out.println("3: View fastest jet");
+		System.out.println("4: View jet with longest range");
+		System.out.println("5: Load all Cargo Jets");
+		System.out.println("6: Dogfight!");
+		System.out.println("7: Add new Jet");
+		System.out.println("8: View Mach speed of jets");
+		System.out.println("9: Exit");
 	}
 	
 	

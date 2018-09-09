@@ -10,6 +10,7 @@ public class FighterJet extends Jet implements CombatReady, Stealth{
 		super(model, speed, range, price);
 		this.weapon = weapon;
 	}
+	
 	@Override
 	public void fight () {
 		System.out.println("Only Mavrick can handle these boys!");
