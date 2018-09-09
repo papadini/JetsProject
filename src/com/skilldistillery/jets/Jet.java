@@ -29,16 +29,16 @@ public void fly () {
 public void machSpeed (double speed ) {
 	double mach = speed / 760.5583392985;
 	if (mach < 1.0 ) {
-		System.out.println(" This jet is Subsonic");
+		System.out.println(" is Subsonic");
 	}
 	else if ( mach == 1.0 ) {
-		System.out.println(" This jet is Transonic");
+		System.out.println(" is Transonic");
 	}
 	else if (mach > 1.0 ) {
-		System.out.println("This jet is Supersonic");
+		System.out.println(" is Supersonic");
 	}
 	else {
-		System.out.println("This jet is Hypersonic");
+		System.out.println(" is Hypersonic");
 	}
 }
 public String getModel() {

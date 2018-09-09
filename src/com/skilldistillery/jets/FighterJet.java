@@ -29,7 +29,7 @@ public class FighterJet extends Jet implements CombatReady, Stealth{
 
 	@Override
 	public String toString() {
-		return  "Fighter Jet-weapon: " + weapon + " " + super.toString();
+		return  "Fighter Jet- weapon: " + weapon + " " + super.toString();
 	}
 
 	@Override

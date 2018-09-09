@@ -11,13 +11,16 @@ public class Secret extends Jet implements CombatReady, Stealth{
 	@Override
 	public void fly () {
 		System.out.println("SHHHHHHHHHHHHHHHH......TOP SECRET");
+		System.out.println("Jet : TOP SECRET Speed: TOP SECRET Range: TOP SECRET Price: TOP SECRET Time: TOP SECRET ");
+	}
+	@Override
+	public void machSpeed ( double speed) {
+		System.out.println(" is TOP SECRET!!");
 	}
 
 	@Override
 	public String toString() {
-		return "Secret [getModel()=" + getModel() + ", getSpeed()=" + getSpeed() + ", getRange()=" + getRange()
-				 + ", getPrice()=" + getPrice() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + ", getClass()=" + getClass() + "]";
+		return "Secret Jet- " + super.toString();
 	}
 
 	@Override

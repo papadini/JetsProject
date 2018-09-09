@@ -112,25 +112,31 @@ public class AirField {
 		}
 	}
 	
-	public void addJet () {
+	public int addJet () {
 		Scanner kb = new Scanner(System.in);
-		System.out.print("Enter jet model: ");
+		System.out.println("Enter jet model: ");
 		String jName = kb.next();
-		System.out.print("Enter your jets speed: ");
+		System.out.println("Enter your jets speed: ");
 		double speed = kb.nextDouble();
-		System.out.print("Enter your jets range: ");
+		System.out.println("Enter your jets range: ");
 		double range = kb.nextDouble();
-		System.out.print("Enter your jets range: ");
+		System.out.println("Enter your jets price: ");
 		double price = kb.nextDouble();
+		price = price * 000001;
+		System.out.println("Make another selection");
+		int input = kb.nextInt();
 		
 		for ( int i = 6; i < jets.length ; i ++) {
 			if ( jets[i] == null ) {
 				jets[i] = new JetImpl( jName, speed, range, price );
-				break;
+				return input;
 			}
 		}
+		
+	
 			
 		kb.close();
+		return 0;
 		
 		
 		
@@ -138,6 +144,7 @@ public class AirField {
 	public void displayMach () {
 		for (Jet jet : jets) {
 			if ( jet != null ) {
+				System.out.print("The " + jet.getModel());
 				jet.machSpeed( jet.getSpeed() );
 			}
 		}
