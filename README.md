@@ -2,4 +2,10 @@
 
 ### Week 2 Homework for Skill Distillery 
 
-this program displays and manages a fleet of jet objects.
+#### Lessons learned:
+
+
+##### Technologies used:
+
+
+### Overview:
