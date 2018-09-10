@@ -58,6 +58,9 @@ public class AirField {
 	public void findFastest() {
 		double largest = jets[0].getSpeed();
 		String fastest = jets[0].getModel();
+		double range = jets[0].getRange();
+		double price = jets[0].getPrice();
+		
 		for (int i = 0; i < jets.length; i++) {
 			if (jets[i] != null) {
 				if (jets[i].getSpeed() > largest) {
@@ -70,12 +73,15 @@ public class AirField {
 
 		System.out.println("The fastest Jet we have is " + fastest +
 				". It can go " + largest + "mph!");
+		System.out.println("Its range is " + range + " and costs $" + price + " million");
 
 	}
 	
 	public  void longestRange () {
 		double longest = jets[0].getRange();
 		String longestRange = jets[0].getModel();
+		double speed = jets[0].getSpeed();
+		double price = jets[0].getPrice();
 		for (int i = 0; i < jets.length; i++) {
 			if (jets[i] != null) {
 				if (jets[i].getRange() > longest) {
@@ -88,6 +94,7 @@ public class AirField {
 		
 		System.out.println("The Jet with the longest range is " + longestRange 
 				+ " and it can go " + longest + " miles!" );
+		System.out.println("Its speed is " + speed + " and costs " + price + " million ");
 		
 }
 	public void callCargo () {
