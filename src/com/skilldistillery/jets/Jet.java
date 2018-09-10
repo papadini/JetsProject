@@ -22,9 +22,9 @@ public Jet (String model, double speed, double range, double price ) {
 
 
 public void fly () {
-	System.out.println("SHHOOOOOOOOOSHHHHHHHH!!!!!!!!!!!");
 	double time = range / speed;
 	System.out.println("Jet : " + model + " Speed: " + speed + " Range: " + range + " Price: " + price + " Time: " + df.format(time) + " hours");
+	System.out.println("SHHOOOOOOOOOSHHHHHHHH!!!!!!!!!!!");
 }
 public void machSpeed (double speed ) {
 	double mach = speed / 760.5583392985;

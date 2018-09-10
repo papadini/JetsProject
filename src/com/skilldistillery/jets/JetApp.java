@@ -36,11 +36,12 @@ public class JetApp {
 		jets[5] = jet6;
 		field.setJets(jets);
 		
-		
+		System.out.println("AIRFIELD Inventory: ");
 		field.displayAirField();
+		System.out.println("*----------------*");
 		System.out.println("Make a selection: ");
 		menu();
-		//field.addJet();
+		
 		
 		
 		
@@ -48,7 +49,76 @@ public class JetApp {
 	
 	public void  menu () {
 		Scanner kb = new Scanner(System.in);
+		System.out.println();
+		menuIndex();
 		
+		int choice = kb.nextInt();
+		while( choice != 9 ) {
+		
+		switch ( choice ) {
+		case 1 : field.displayAirField();
+				System.out.println("*--------------------*");
+				System.out.println("Make another selection");
+				menuIndex();
+				choice = kb.nextInt();
+			break;
+		case 2 : field.displayFly();
+				System.out.println("*--------------------*");	
+				System.out.println("Make another selection");
+				menuIndex();
+				choice = kb.nextInt();
+			break;
+		case 3 : field.findFastest();
+				System.out.println("*--------------------*");
+				System.out.println("Make another selection");
+				menuIndex();
+				choice = kb.nextInt();
+			break;
+		case 4 : field.longestRange();
+				System.out.println("*--------------------*");
+				System.out.println("Make another selection");
+				menuIndex();
+				choice = kb.nextInt();
+			break;
+		case 5 : field.callCargo();
+				System.out.println("*--------------------*");
+				System.out.println("Make another selection");
+				menuIndex();
+				choice = kb.nextInt();
+			break;
+		case 6 : field.dogFight();
+				System.out.println("*--------------------*");
+				System.out.println("Make another selection");
+				menuIndex();
+				choice = kb.nextInt();
+			break;
+		case 7 : choice = field.addJet();
+				break;
+			
+		case 8 : field.displayMach();
+				System.out.println("*--------------------*");
+				System.out.println("Make another selection");
+				menuIndex();
+				choice = kb.nextInt();
+			break;
+		case 9 : System.out.println("Thanks for visiting the Air Field");
+			break;
+		default: System.out.println("*--------------*");
+			     System.out.println("Enter 1-9 please");
+		
+		
+			System.out.println("Make another selection");
+			choice = kb.nextInt();
+		
+		
+		}
+	}
+		
+	kb.close();
+	}
+	
+	public void menuIndex () {
+		System.out.println();
 		System.out.println("1: List Fleet");
 		System.out.println("2: Fly all Jets");
 		System.out.println("3: View fastest jet");
@@ -58,55 +128,6 @@ public class JetApp {
 		System.out.println("7: Add new Jet");
 		System.out.println("8: View Mach speed of jets");
 		System.out.println("9: Exit");
-		
-		int choice = kb.nextInt();
-		
-	while( choice != 9 ) {
-		switch ( choice ) {
-		case 1 : field.displayAirField();
-				System.out.println("Make another selection");
-				choice = kb.nextInt();
-			break;
-		case 2 : field.displayFly();
-				System.out.println("Make another selection");
-				choice = kb.nextInt();
-			break;
-		case 3 : field.findFastest();
-				System.out.println("Make another selection");
-				choice = kb.nextInt();
-			break;
-		case 4 : field.longestRange();
-				System.out.println("Make another selection");
-				choice = kb.nextInt();
-			break;
-		case 5 : field.callCargo();
-				System.out.println("Make another selection");
-				choice = kb.nextInt();
-			break;
-		case 6 : field.dogFight();
-				System.out.println("Make another selection");
-				choice = kb.nextInt();
-			break;
-		case 7 : choice = field.addJet();
-				break;
-			
-		case 8 : field.displayMach();
-				System.out.println("Make another selection");
-				choice = kb.nextInt();
-			break;
-		case 9 : System.out.println("Thanks for visiting the Air Field");
-			break;
-		default: System.out.println("Enter 1-9 please");
-		
-		
-			System.out.println("Make another selection");
-			choice = kb.nextInt();
-		
-		
-		}
 	}
-	
-	}
-	
 	
 }

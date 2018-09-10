@@ -124,6 +124,7 @@ public class AirField {
 		double price = kb.nextDouble();
 		price = price * 000001;
 		menu();
+		System.out.println("*--------------------*");
 		System.out.println("Make another selection");
 		int input = kb.nextInt();
 		
